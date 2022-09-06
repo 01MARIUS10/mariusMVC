@@ -1,0 +1,33 @@
+@import './variable.css';
+.footer {
+    background: var(--secondary-color);
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.footer div {
+    padding: auto;
+}
+.section-title{
+    font-weight: normal;
+    color: var(--third-color) !important;
+    padding: 1em 0;
+    margin-left: 2em;
+}
+.section-title::after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 5px;
+    background: var(--secondary-color)!important;
+}
+.footer h3{
+    color: var(--primary-color) !important;
+}
+.footer p{
+    color: var(--primary-color) !important;
+}
+.list-partenaires img{
+    width: 120px;
+}

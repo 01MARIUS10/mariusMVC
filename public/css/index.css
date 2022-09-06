@@ -1,0 +1,189 @@
+@import "./variable.css";
+/* :root{
+    --primary-color : #ebebeb;
+    --secondary-color : #e90808;
+    --third-color : #0a0a0a;
+} */
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    /* transition: .2s linear; */
+}
+
+/*début style navbar*/
+nav {
+    padding:  2em ;
+}
+
+.navUl {
+    width: 100%;
+}
+
+nav img {
+    height: 5rem;
+}
+
+.navUl li a {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.navUl li a:hover {
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.section1Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionTitle {
+    color: #af2323;
+    position: relative;
+    font-size: 9rem;
+
+    letter-spacing: .8rem;
+
+}
+/*Home page*/
+.home_page{
+    height: 60vh;
+}
+.sectionTitle {
+    color: var(--secondary-color);
+    position: relative;
+    font-size: 9rem;
+    letter-spacing: .8rem;
+}
+.sectionTitle::after {
+    content: "";
+    position: absolute;
+    background-color:var(--third-color);
+    height: 2px;
+    width: 70%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    animation: sectionTitle 1.5s ease-in-out forwards;
+}
+
+@keyframes sectionTitle {
+    100% {
+        transform: translateX(-50%) scaleX(1)
+    }
+}
+
+
+@media only screen and (max-width: 985px) {
+    nav {
+        height: 4rem;
+    }
+
+    .navUl li a {
+        font-size: 0.8rem;
+    }
+
+    nav img {
+        height: 3.9rem;
+    }
+
+    .sectionTitle {
+        font-size: 7rem;
+        letter-spacing: .8rem;
+    }
+    .sectionTitle p{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 580px) {
+
+}
+@media only screen and (max-width: 580px) {
+    nav {
+        height: 5.1rem;
+    }
+    .navbar-toggle{
+        outline: none !important;
+        border: none !important;
+    }
+    .navUl {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 .5rem 1rem #00000026 !important;
+        margin-bottom: 3rem;
+        position: relative;
+        z-index: 200;
+    }
+
+
+    .navUl li a {
+        font-size: 0.8rem;
+    }
+    .sectionTitle {
+        font-size: 5rem;
+    }
+    .sectionTitle p{
+        font-size: 13px;
+    }
+    .home_page{
+        height:50vh;
+    }
+}  
+
+/*fin style navbar*/
+
+/*debut style objectif*/
+/* .objectif_page{
+    padding: 1em 2em;
+} */
+.section-title{
+    font-weight: normal;
+    color: var(--third-color) !important;
+    padding: 1em 0;
+    margin-left: 2em;
+}
+.section-title::after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 5px;
+    background: var(--secondary-color)!important;
+}
+.container-objectif{
+    row-gap: 1em !important;
+    column-gap: 1em !important;
+}
+.title-objectif{
+    color: var(--third-color) !important;
+}
+.item-objectif{
+    box-shadow: 0 .5rem 1rem #00000026 !important;
+    padding: 2em 0 !important;
+}
+.software_engeneering{
+    align-content: center !important;
+}
+.software_engeneering :nth-child(1){
+    width: 500px;
+}
+.description{
+    display: grid;
+    /* justify-content: center; */
+}
+.description .title-objectif{
+    justify-items: center;
+}
+.description:nth-child(2){
+    text-align: center;
+}
+/*fin style objectif*/
