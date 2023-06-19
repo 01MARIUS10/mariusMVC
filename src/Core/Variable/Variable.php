@@ -8,7 +8,7 @@ class Variable{
 
     public function __construct(){
         self::$rootLink = dirname(dirname(dirname(dirname(__FILE__))));
-        self::$server = "http://localhost:8080";
+        self::$server = ROOTPATH;
     }
 
     public static function Root(){

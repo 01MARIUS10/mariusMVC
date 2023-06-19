@@ -1,7 +1,6 @@
 <?php
 namespace App\Core\Dispatcher;
 
-
 class Dispatcher{
     public $pageController;
     public $model;
@@ -16,17 +15,23 @@ class Dispatcher{
 
     public function loadController(){
         $this->isLoading = false;
-        $this->checkingRoute("GET","","Acceuil");
-        $this->checkingRoute("GET","acceuil","Acceuil");
-        $this->checkingRoute("GET","formation","Formation");
-        $this->checkingRoute("GET","condition_admission","ConditionAd");
+        $Webroute =  \App\_WebRoute\WebRoute::webroutes();
+        foreach($Webroute as $route){
+            $this->checkingRoute($route['methode'],$route['url'],$route['controller'],$route['action']);
+        }
         $this->defaultRoute();
     }
 
-    public function checkingRoute($meth,$url,$controller){
+    public function checkingRoute($meth,$url,$controller,$action=false){
         if($this->router->url === $url && $this->router->method===$meth && !$this->isLoading){
             $this->isLoading = true;
-            return new ("\App\Controller\\".$controller)($this->router);
+            $controller = '\App\Controller\\'.$controller;
+            $controllerObj = new $controller($this->router);
+            if(!$action){
+                $controllerObj->show($this->router->request);
+            }
+            $controllerObj->$action($this->router->request);
+            // call_user_func($controllerObj->$action,$this->router->request);
         }
     }
     

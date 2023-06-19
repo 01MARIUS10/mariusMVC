@@ -3,7 +3,8 @@
     "description": "website for MIT facultes des sciences",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "App\\": "src/",
+            "ORM\\":"Model/"
         }
     },
     "authors": [
